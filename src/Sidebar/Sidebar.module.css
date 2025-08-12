@@ -1,0 +1,49 @@
+.sidebar {
+  display: block;
+  background-color: #d9bdbd;
+  padding: 10px;
+  transition: width 0.5s ease;
+}
+.sidebar.closed {
+  width: 110px;
+}
+.sidebar.open {
+  width: 500px;
+}
+.sidebar-meals,
+.sidebar-desserts,
+.sidebar-breakfast {
+  cursor: pointer;
+  width: 100%;
+}
+.sidebar-meals {
+  background-color: blueviolet;
+  color: white;
+  border: 2px solid black;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+.sidebar-meals:hover {
+  background-color: rgb(79, 18, 136);
+}
+.sidebar-desserts {
+  background-color: blueviolet;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.sidebar-desserts:hover {
+  background-color: rgb(79, 18, 136);
+}
+.sidebar-breakfast {
+  background-color: blueviolet;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.sidebar-breakfast:hover {
+  background-color: rgb(79, 18, 136);
+}
