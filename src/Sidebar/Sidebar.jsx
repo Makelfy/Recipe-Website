@@ -10,7 +10,7 @@ function Sidebar() {
     console.log(isOpen);
   }
   return (
-    <aside
+    <header
       className={`${styles.sidebar} ${isOpen ? styles.open : styles.closed}`}
     >
       <button
@@ -19,12 +19,10 @@ function Sidebar() {
       >
         Menu
       </button>
-      <details className={styles["sidebar-meals"]}>
-        <summary>Meals</summary>
-        <ul>
-          <li>Pasta with Ground Beef</li>
-        </ul>
-      </details>
+
+      <div>
+        <p className={styles["sidebar-desserts"]}>Meals</p>
+      </div>
 
       <details className={styles["sidebar-desserts"]}>
         <summary>Desserts</summary>
@@ -39,7 +37,7 @@ function Sidebar() {
           <li></li>
         </ul>
       </details>
-    </aside>
+    </header>
   );
 }
 export default Sidebar;
