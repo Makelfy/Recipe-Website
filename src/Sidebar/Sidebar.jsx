@@ -3,40 +3,77 @@ import React from "react";
 import styles from "./Sidebar.module.css";
 
 function Sidebar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [selectedMenu, setSelectedMenu] = useState("");
 
-  function handleMenuOpening() {
-    setIsOpen(!isOpen);
-    console.log(isOpen);
+  function handleSelectedMenu(type) {
+    setIsOpenMenu(true);
+    setSelectedMenu(type);
+
+    if (type === "") {
+      setIsOpenMenu(false);
+      setSelectedMenu("");
+    }
   }
-  return (
-    <header
-      className={`${styles.sidebar} ${isOpen ? styles.open : styles.closed}`}
-    >
-      <button
-        className={styles["sidebar-menu-button"]}
-        onClick={handleMenuOpening}
-      >
-        Menu
-      </button>
 
-      <div>
-        <p className={styles["sidebar-desserts"]}>Meals</p>
+  return (
+    <header className={styles["sidebar"]}>
+      <div className={styles["sidebar-top"]}>
+        <div
+          className={`${styles["sidebar-meals"]} ${
+            selectedMenu === "meals" ? styles.open : styles.closed
+          }`}
+          onMouseEnter={() => handleSelectedMenu("meals")}
+          onMouseLeave={() => handleSelectedMenu("")}
+        >
+          Meals
+        </div>
+
+        <div
+          className={`${styles["sidebar-desserts"]} ${
+            selectedMenu === "desserts" ? styles.open : styles.closed
+          }`}
+          onMouseEnter={() => handleSelectedMenu("desserts")}
+          onMouseLeave={() => handleSelectedMenu("")}
+        >
+          Desserts
+        </div>
+
+        <div
+          className={`${styles["sidebar-breakfasts"]} ${
+            selectedMenu === "breakfasts" ? styles.open : styles.closed
+          }`}
+          onMouseEnter={() => handleSelectedMenu("breakfasts")}
+          onMouseLeave={() => handleSelectedMenu("")}
+        >
+          Breakfasts
+        </div>
       </div>
 
-      <details className={styles["sidebar-desserts"]}>
-        <summary>Desserts</summary>
-        <ul>
-          <li></li>
-        </ul>
-      </details>
+      <div
+        className={`${styles["sidebar-bottom"]} ${
+          isOpenMenu ? styles.open : styles.closed
+        }`}
+        onMouseEnter={() => handleSelectedMenu(selectedMenu)}
+        onMouseLeave={() => handleSelectedMenu("")}
+      >
+        {selectedMenu === "meals" ? (
+          <ul>
+            <li>Pasta with Ground Beef</li>
+          </ul>
+        ) : null}
 
-      <details className={styles["sidebar-breakfast"]}>
-        <summary>Breakfasts</summary>
-        <ul>
-          <li></li>
-        </ul>
-      </details>
+        {selectedMenu === "desserts" ? (
+          <ul>
+            <li></li>
+          </ul>
+        ) : null}
+        {selectedMenu === "breakfasts" ? (
+          <ul>
+            <li></li>
+          </ul>
+        ) : null}
+      </div>
     </header>
   );
 }

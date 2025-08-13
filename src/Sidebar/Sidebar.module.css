@@ -1,48 +1,76 @@
 .sidebar {
   position: fixed;
   width: 100vw;
-  background-color: #d9bdbd;
-  transition: height 0.5s ease;
   overflow: hidden;
-
   z-index: 100;
 }
-.sidebar.closed {
-  height: 110px;
+.sidebar-top {
+  height: 80px;
+  background-color: #d9bdbd;
 }
-.sidebar.open {
-  height: 500px;
-}
+
 .sidebar-meals,
 .sidebar-desserts,
-.sidebar-breakfast {
+.sidebar-breakfasts {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: larger;
+
   display: inline-block;
   cursor: pointer;
-  height: 100%;
+  height: 60px;
   margin-left: 20px;
   padding: 10px;
 }
-.sidebar-meals {
-  background-color: blueviolet;
+.sidebar-meals.closed {
+  background: linear-gradient(blueviolet 80px);
+
   color: white;
-  transition: background-color 0.3s ease;
+}
+.sidebar-meals.open {
+  height: 65px;
+  background: linear-gradient(purple 80px);
+
+  color: white;
 }
 .sidebar-meals:hover {
-  background-color: rgb(79, 18, 136);
+  background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, purple 50%);
 }
-.sidebar-desserts {
-  background-color: blueviolet;
+
+.sidebar-desserts.closed {
+  background: linear-gradient(blueviolet 80px);
   color: white;
-  transition: background-color 0.3s ease;
+}
+.sidebar-desserts.open {
+  height: 65px;
+  background: linear-gradient(purple 80px);
+  color: white;
 }
 .sidebar-desserts:hover {
-  background-color: rgb(79, 18, 136);
+  background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, purple 50%);
 }
-.sidebar-breakfast {
-  background-color: blueviolet;
+
+.sidebar-breakfasts.closed {
+  background: linear-gradient(blueviolet 80px);
   color: white;
-  transition: background-color 0.3s ease;
 }
-.sidebar-breakfast:hover {
-  background-color: rgb(79, 18, 136);
+.sidebar-breakfasts.open {
+  height: 65px;
+  background: linear-gradient(purple 80px);
+  color: white;
+}
+.sidebar-breakfasts:hover {
+  background: linear-gradient(rgb(0, 0, 0) 0, purple 80px);
+}
+
+.sidebar-bottom {
+  background-color: purple;
+  margin: 0;
+}
+.sidebar-bottom.close {
+  height: 0;
+}
+.sidebar-bottom.open {
+  height: max-content;
+  padding: 15px;
 }
