@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import styles from "./Sidebar.module.css";
+import { useMeal } from "/src/MainTemplate.jsx";
 
 function Sidebar() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -9,21 +10,25 @@ function Sidebar() {
   function handleSelectedMenu(type) {
     setIsOpenMenu(true);
     setSelectedMenu(type);
+    setSelectedMeal(type);
 
     if (type === "") {
       setIsOpenMenu(false);
       setSelectedMenu("");
+      setSelectedMeal("");
     }
   }
+
+  const { setSelectedMeal } = useMeal();
 
   return (
     <header className={styles["sidebar"]}>
       <div className={styles["sidebar-top"]}>
         <div
           className={`${styles["sidebar-meals"]} ${
-            selectedMenu === "meals" ? styles.open : styles.closed
+            selectedMenu === "meal" ? styles.open : styles.closed
           }`}
-          onMouseEnter={() => handleSelectedMenu("meals")}
+          onMouseEnter={() => handleSelectedMenu("meal")}
           onMouseLeave={() => handleSelectedMenu("")}
         >
           Meals
@@ -31,9 +36,9 @@ function Sidebar() {
 
         <div
           className={`${styles["sidebar-desserts"]} ${
-            selectedMenu === "desserts" ? styles.open : styles.closed
+            selectedMenu === "dessert" ? styles.open : styles.closed
           }`}
-          onMouseEnter={() => handleSelectedMenu("desserts")}
+          onMouseEnter={() => handleSelectedMenu("dessert")}
           onMouseLeave={() => handleSelectedMenu("")}
         >
           Desserts
@@ -41,9 +46,9 @@ function Sidebar() {
 
         <div
           className={`${styles["sidebar-breakfasts"]} ${
-            selectedMenu === "breakfasts" ? styles.open : styles.closed
+            selectedMenu === "breakfast" ? styles.open : styles.closed
           }`}
-          onMouseEnter={() => handleSelectedMenu("breakfasts")}
+          onMouseEnter={() => handleSelectedMenu("breakfast")}
           onMouseLeave={() => handleSelectedMenu("")}
         >
           Breakfasts
@@ -57,18 +62,18 @@ function Sidebar() {
         onMouseEnter={() => handleSelectedMenu(selectedMenu)}
         onMouseLeave={() => handleSelectedMenu("")}
       >
-        {selectedMenu === "meals" ? (
+        {selectedMenu === "meal" ? (
           <ul>
             <li>Pasta with Ground Beef</li>
           </ul>
         ) : null}
 
-        {selectedMenu === "desserts" ? (
+        {selectedMenu === "dessert" ? (
           <ul>
             <li></li>
           </ul>
         ) : null}
-        {selectedMenu === "breakfasts" ? (
+        {selectedMenu === "breakfast" ? (
           <ul>
             <li></li>
           </ul>

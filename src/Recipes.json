@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "type": "meal",
+    "name": "Spaghetti Bolognese",
+    "ingredients": [
+      "spaghetti",
+      "minced beef",
+      "tomato sauce",
+      "onion",
+      "garlic"
+    ],
+    "time": 25,
+    "instructions": "Boil spaghetti, cook beef with onion and garlic, mix with sauce.",
+    "source": "/src/assets/THE BEST Bulking Meal Prep, Creamy Garlic Beef Pasta, OVER 1000 calories with 72g Protein 🔥💪🏽.mp4"
+  },
+  {
+    "id": 2,
+    "type": "dessert",
+    "name": "Chocolate Cake",
+    "ingredients": ["flour", "sugar", "cocoa powder", "eggs", "butter"],
+    "time": 25,
+    "instructions": "Mix dry and wet ingredients separately, combine, bake at 180°C for 35 minutes.",
+    "source": "/src/assets/THE BEST Bulking Meal Prep, Creamy Garlic Beef Pasta, OVER 1000 calories with 72g Protein 🔥💪🏽.mp4"
+  }
+]

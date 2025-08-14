@@ -1,14 +1,19 @@
+import { MealProvider } from "./MainTemplate.jsx";
 import RecipeCard from "./RecipeCard/RecipeCard.jsx";
 import Sidebar from "./Sidebar/Sidebar.jsx";
+import MealsPage from "./MealsPage/MealsPage.jsx";
+
 function App() {
   return (
-    <div className="main-page">
-      <Sidebar />
-      <div className="recipe-cards">
-        <RecipeCard title="Pasta with Ground Beef" minute={25} type="Meal" />
-        <RecipeCard title="Pasta with Ground Beef" minute={25} type="Meal" />
+    <MealProvider>
+      <div className="main-page">
+        <Sidebar />
+
+        <div className="recipe-cards">
+          <MealsPage />
+        </div>
       </div>
-    </div>
+    </MealProvider>
   );
 }
 
