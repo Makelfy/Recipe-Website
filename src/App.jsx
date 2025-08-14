@@ -1,19 +1,19 @@
-import { MealProvider } from "./MainTemplate.jsx";
+import { FoodProvider } from "./MainTemplate.jsx";
 import RecipeCard from "./RecipeCard/RecipeCard.jsx";
 import Sidebar from "./Sidebar/Sidebar.jsx";
-import MealsPage from "./MealsPage/MealsPage.jsx";
+import FoodsPage from "./FoodsPage/FoodsPage.jsx";
 
 function App() {
   return (
-    <MealProvider>
+    <FoodProvider>
       <div className="main-page">
         <Sidebar />
 
         <div className="recipe-cards">
-          <MealsPage />
+          <FoodsPage />
         </div>
       </div>
-    </MealProvider>
+    </FoodProvider>
   );
 }
 

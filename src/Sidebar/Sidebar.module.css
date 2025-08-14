@@ -9,9 +9,7 @@
   background-color: #d9bdbd;
 }
 
-.sidebar-meals,
-.sidebar-desserts,
-.sidebar-breakfasts {
+.sidebar-home {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
   font-size: larger;
@@ -19,48 +17,47 @@
   display: inline-block;
   cursor: pointer;
   height: 60px;
-  margin-left: 20px;
+  margin: 0 5rem 0 2rem;
   padding: 10px;
 }
-.sidebar-meals.closed {
+.sidebar-home.closed {
+  background: linear-gradient(rgb(0, 83, 0) 80px);
+
+  color: white;
+}
+.sidebar-home.open {
+  background-color: rgb(0, 177, 0);
+
+  color: white;
+}
+.sidebar-home:hover {
+  background: linear-gradient(to bottom, rgb(0, 110, 0) 0%, rgb(0, 212, 0) 50%);
+}
+
+.sidebar-food {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: larger;
+
+  display: inline-block;
+  cursor: pointer;
+  height: 60px;
+  padding: 10px;
+  margin-left: 3rem;
+}
+.sidebar-food.closed {
   background: linear-gradient(blueviolet 80px);
 
   color: white;
 }
-.sidebar-meals.open {
+.sidebar-food.open {
   height: 61px;
   background: linear-gradient(purple 80px);
 
   color: white;
 }
-.sidebar-meals:hover {
-  background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, purple 50%);
-}
-
-.sidebar-desserts.closed {
-  background: linear-gradient(blueviolet 80px);
-  color: white;
-}
-.sidebar-desserts.open {
-  height: 65px;
-  background: linear-gradient(purple 80px);
-  color: white;
-}
-.sidebar-desserts:hover {
-  background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, purple 50%);
-}
-
-.sidebar-breakfasts.closed {
-  background: linear-gradient(blueviolet 80px);
-  color: white;
-}
-.sidebar-breakfasts.open {
-  height: 65px;
-  background: linear-gradient(purple 80px);
-  color: white;
-}
-.sidebar-breakfasts:hover {
-  background: linear-gradient(rgb(0, 0, 0) 0, purple 80px);
+.sidebar-food:hover {
+  background: linear-gradient(to bottom, rgb(79, 1, 95) 0%, purple 50%);
 }
 
 .sidebar-bottom {

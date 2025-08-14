@@ -1,16 +1,16 @@
 import { createContext, useState, useContext } from "react";
 
-const MealContext = createContext();
+const FoodContext = createContext();
 
-export function MealProvider({ children }) {
-  const [selectedMeal, setSelectedMeal] = useState("");
+export function FoodProvider({ children }) {
+  const [selectedFood, setSelectedFood] = useState("");
   return (
-    <MealContext.Provider value={{ selectedMeal, setSelectedMeal }}>
+    <FoodContext.Provider value={{ selectedFood, setSelectedFood }}>
       {children}
-    </MealContext.Provider>
+    </FoodContext.Provider>
   );
 }
 
-export function useMeal() {
-  return useContext(MealContext);
+export function useFood() {
+  return useContext(FoodContext);
 }

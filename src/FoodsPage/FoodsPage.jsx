@@ -2,20 +2,17 @@ import { useContext } from "react";
 import styles from "./MealsPage.module.css";
 import RecipeCard from "/src/RecipeCard/RecipeCard.jsx";
 import Recipes from "/src/Recipes.json";
-import { useMeal } from "../MainTemplate";
+import { useFood } from "../MainTemplate";
 
-function MealsPage() {
-  const { selectedMeal } = useMeal();
-  const selectedMenu = selectedMeal;
+function FoodsPage() {
+  const { selectedFood } = useFood();
 
-  const filteredRecipes = [];
+  let filteredRecipes = Recipes.filter((item) => item.type === selectedFood);
 
-  if (selectedMenu !== "") {
-    const filteredRecipes = Recipes.filter(
-      (item) => item.type === selectedMenu
-    );
-    console.log(filteredRecipes);
+  if (selectedFood === "home") {
+    filteredRecipes = Recipes;
   }
+
   return (
     <>
       {filteredRecipes.map((item) => (
@@ -30,4 +27,4 @@ function MealsPage() {
     </>
   );
 }
-export default MealsPage;
+export default FoodsPage;
