@@ -1,12 +1,20 @@
 import React from "react";
 import styles from "./RecipeCard.module.css";
+import { useFoodCard } from "/src/MainTemplate.jsx";
 
 function RecipeCard(props) {
-  function handleOpenRecipe() {}
+  const { selectedFoodCard, setSelectedFoodCard } = useFoodCard("");
+
+  function handleOpenRecipe(id) {
+    setSelectedFoodCard(id);
+  }
 
   return (
     <>
-      <div className={styles["recipe-card-box"]} onClick={handleOpenRecipe}>
+      <div
+        className={styles["recipe-card-box"]}
+        onClick={() => handleOpenRecipe(props.id)}
+      >
         <h1 className={styles["recipe-card-title"]}>{props.title}</h1>
         <video controls className={styles["recipe-card-video"]}>
           <source src={props.source} type="video/mp4" />

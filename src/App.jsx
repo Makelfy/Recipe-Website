@@ -1,20 +1,22 @@
-import { FoodProvider } from "./MainTemplate.jsx";
-import RecipeCard from "./RecipeCard/RecipeCard.jsx";
+import { AppProvider, useFoodCard } from "./MainTemplate.jsx";
 import Sidebar from "./Sidebar/Sidebar.jsx";
 import FoodsPage from "./FoodsPage/FoodsPage.jsx";
+import RecipeCardPage from "./RecipeCardPage/RecipeCardPage.jsx";
 
 function App() {
   return (
-    <FoodProvider>
+    <AppProvider>
       <div className="main-page">
         <Sidebar />
-
-        <div className="recipe-cards">
-          <FoodsPage />
-        </div>
+        <MainContent />
       </div>
-    </FoodProvider>
+    </AppProvider>
   );
+}
+
+function MainContent() {
+  const { selectedFoodCard } = useFoodCard();
+  return selectedFoodCard === "" ? <FoodsPage /> : <RecipeCardPage />;
 }
 
 export default App;

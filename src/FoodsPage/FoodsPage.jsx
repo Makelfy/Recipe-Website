@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import styles from "./MealsPage.module.css";
+import styles from "./FoodsPage.module.css";
 import RecipeCard from "/src/RecipeCard/RecipeCard.jsx";
 import Recipes from "/src/Recipes.json";
 import { useFood } from "../MainTemplate";
@@ -14,17 +14,18 @@ function FoodsPage() {
   }
 
   return (
-    <>
+    <div className={styles["recipe-cards"]}>
       {filteredRecipes.map((item) => (
         <RecipeCard
           key={item.id}
+          id={item.id}
           title={item.name}
           minute={item.time}
           type={item.type}
           source={item.source}
         />
       ))}
-    </>
+    </div>
   );
 }
 export default FoodsPage;

@@ -1,12 +1,14 @@
 import { useState } from "react";
-import React from "react";
 import styles from "./Sidebar.module.css";
-import { useFood } from "/src/MainTemplate.jsx";
+import { useFood, useFoodCard } from "/src/MainTemplate.jsx";
 import Recipes from "/src/Recipes.json";
 
 function Sidebar() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [selectedMenu, setSelectedMenu] = useState("");
+
+  const { selectedFood, setSelectedFood } = useFood();
+  const { setSelectedFoodCard } = useFoodCard();
 
   function handleSelectedMenu(type) {
     setIsOpenMenu(true);
@@ -19,9 +21,8 @@ function Sidebar() {
   }
   function handleClickedMenu(type) {
     setSelectedFood(type);
+    setSelectedFoodCard("");
   }
-
-  const { selectedFood, setSelectedFood } = useFood();
 
   return (
     <header className={styles["sidebar"]}>
