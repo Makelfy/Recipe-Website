@@ -10,6 +10,8 @@ function Sidebar() {
   const { selectedFood, setSelectedFood } = useFood();
   const { setSelectedFoodCard } = useFoodCard();
 
+  const foodTypes = ["meal", "dessert", "breakfast"];
+
   function handleSelectedMenu(type) {
     setIsOpenMenu(true);
     setSelectedMenu(type);
@@ -36,44 +38,20 @@ function Sidebar() {
           Home
         </div>
 
-        <div
-          className={`${styles["sidebar-food"]} ${
-            selectedMenu === "meal" || selectedFood === "meal"
-              ? styles.open
-              : styles.closed
-          }`}
-          onClick={() => handleClickedMenu("meal")}
-          onMouseEnter={() => handleSelectedMenu("meal")}
-          onMouseLeave={() => handleSelectedMenu("")}
-        >
-          Meals
-        </div>
-
-        <div
-          className={`${styles["sidebar-food"]} ${
-            selectedMenu === "dessert" || selectedFood === "dessert"
-              ? styles.open
-              : styles.closed
-          }`}
-          onClick={() => handleClickedMenu("dessert")}
-          onMouseEnter={() => handleSelectedMenu("dessert")}
-          onMouseLeave={() => handleSelectedMenu("")}
-        >
-          Desserts
-        </div>
-
-        <div
-          className={`${styles["sidebar-food"]} ${
-            selectedMenu === "breakfast" || selectedFood === "breakfast"
-              ? styles.open
-              : styles.closed
-          }`}
-          onClick={() => handleClickedMenu("breakfast")}
-          onMouseEnter={() => handleSelectedMenu("breakfast")}
-          onMouseLeave={() => handleSelectedMenu("")}
-        >
-          Breakfasts
-        </div>
+        {foodTypes.map((item) => (
+          <div
+            className={`${styles["sidebar-food"]} ${
+              selectedMenu === item || selectedFood === item
+                ? styles.open
+                : styles.closed
+            }`}
+            onClick={() => handleClickedMenu(item)}
+            onMouseEnter={() => handleSelectedMenu(item)}
+            onMouseLeave={() => handleSelectedMenu("")}
+          >
+            {item}s
+          </div>
+        ))}
       </div>
 
       <div
