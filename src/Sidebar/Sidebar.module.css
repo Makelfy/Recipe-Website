@@ -3,22 +3,30 @@
   width: 100vw;
   overflow: hidden;
   z-index: 100;
-}
-.sidebar-top {
-  height: 80px;
-  background-color: #d9bdbd;
-}
 
-.sidebar-home {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
   font-size: larger;
+  color: white;
+}
+.sidebar-top {
+  height: 3rem;
+  background-color: #d9bdbd;
 
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 4fr 2fr repeat(3, 4fr) 3fr 4fr;
+  grid-column-gap: clamp(20px, 2vw, 50px);
+}
+
+.sidebar-gap {
+  pointer-events: none;
+  background: transparent;
+}
+
+.sidebar-home {
   cursor: pointer;
-  height: 60px;
-  margin: 0 5rem 0 2rem;
-  padding: 10px;
+  align-content: center;
+  text-align: center;
 }
 .sidebar-home.closed {
   background: linear-gradient(rgb(0, 83, 0) 80px);
@@ -35,16 +43,11 @@
 }
 
 .sidebar-food {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
-  font-size: larger;
+  align-content: center;
   text-transform: capitalize;
+  text-align: center;
 
-  display: inline-block;
   cursor: pointer;
-  height: 60px;
-  padding: 10px;
-  margin-left: 3rem;
 }
 .sidebar-food.closed {
   background: linear-gradient(blueviolet 80px);
@@ -52,7 +55,6 @@
   color: white;
 }
 .sidebar-food.open {
-  height: 61px;
   background: linear-gradient(purple 80px);
 
   color: white;
@@ -61,14 +63,27 @@
   background: linear-gradient(to bottom, rgb(79, 1, 95) 0%, purple 50%);
 }
 
+.sidebar-add-recipe {
+  text-align: center;
+  align-content: center;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+.sidebar-add-recipe:hover {
+  background-color: lightgreen;
+}
+
 .sidebar-bottom {
   background-color: purple;
   margin: 0;
+  font-weight: normal;
+  font-size: 15px;
 }
 .sidebar-bottom.close {
   height: 0;
 }
 .sidebar-bottom.open {
   height: max-content;
-  padding: 15px;
+  padding: 5px;
 }

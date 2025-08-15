@@ -8,22 +8,26 @@ function RecipeCardPage() {
   const foodCard = Recipes.find((item) => item.id === selectedFoodCard);
 
   return (
-    <div>
+    <div className={styles["recipe-card-page"]}>
       <div>
         <video controls className={styles["recipe-card-page-video"]}>
           <source src={foodCard.source} type="video/mp4" />
         </video>
       </div>
-      <div>
-        <h2>{foodCard.name}</h2>
-        <h3>{foodCard.type}</h3>
-        <h4>{foodCard.time} minutes to make</h4>
-        <ul>
+      <div className={styles["recipe-card-page-text"]}>
+        <h2 className={styles["recipe-card-page-name"]}>{foodCard.name}</h2>
+        <h3 className={styles["recipe-card-page-type"]}>{foodCard.type}</h3>
+        <h4 className={styles["recipe-card-page-time"]}>
+          {foodCard.time} minutes to make
+        </h4>
+        <ul className={styles["recipe-card-page-ingredients"]}>
           {foodCard.ingredients.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
-        <p>{foodCard.instructions}</p>
+        <p className={styles["recipe-card-page-instructions"]}>
+          {foodCard.instructions}
+        </p>
       </div>
     </div>
   );

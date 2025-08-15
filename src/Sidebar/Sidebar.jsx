@@ -38,6 +38,8 @@ function Sidebar() {
           Home
         </div>
 
+        <div className={styles["sidebar-gap"]}></div>
+
         {foodTypes.map((item) => (
           <div
             className={`${styles["sidebar-food"]} ${
@@ -52,6 +54,10 @@ function Sidebar() {
             {item}s
           </div>
         ))}
+
+        <div className={styles["sidebar-gap"]}></div>
+
+        <div className={styles["sidebar-add-recipe"]}>Add Recipe</div>
       </div>
 
       <div

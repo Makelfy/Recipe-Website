@@ -4,5 +4,7 @@ body {
 }
 
 .main-page {
-  display: flex;
+  display: grid;
+  grid-template-rows: 3rem, 10rem;
+  row-gap: 15px;
 }
