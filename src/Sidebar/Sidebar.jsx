@@ -25,6 +25,9 @@ function Sidebar() {
     setSelectedFood(type);
     setSelectedFoodCard("");
   }
+  function handleClickedFood(id) {
+    setSelectedFoodCard(id);
+  }
 
   return (
     <header className={styles["sidebar"]}>
@@ -67,28 +70,21 @@ function Sidebar() {
         onMouseEnter={() => handleSelectedMenu(selectedMenu)}
         onMouseLeave={() => handleSelectedMenu("")}
       >
-        {selectedMenu === "meal" ? (
-          <ul>
-            {Recipes.filter((item) => item.type === "meal").map((item) => (
-              <li key={item.id}>{item.name}</li>
-            ))}
-          </ul>
-        ) : null}
-
-        {selectedMenu === "dessert" ? (
-          <ul>
-            {Recipes.filter((item) => item.type === "dessert").map((item) => (
-              <li key={item.id}>{item.name}</li>
-            ))}
-          </ul>
-        ) : null}
-        {selectedMenu === "breakfast" ? (
-          <ul>
-            {Recipes.filter((item) => item.type === "breakfast").map((item) => (
-              <li key={item.id}>{item.name}</li>
-            ))}
-          </ul>
-        ) : null}
+        {foodTypes.map((foodType) =>
+          selectedMenu === foodType ? (
+            <ul className={styles["sidebar-food-item-container"]}>
+              {Recipes.filter((item) => item.type === foodType).map((item) => (
+                <li
+                  className={styles["sidebar-food-item-list"]}
+                  onClick={() => handleClickedFood(item.id)}
+                  key={item.id}
+                >
+                  {item.name}
+                </li>
+              ))}
+            </ul>
+          ) : null
+        )}
       </div>
     </header>
   );

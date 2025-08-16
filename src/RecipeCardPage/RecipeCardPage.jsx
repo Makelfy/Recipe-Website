@@ -21,11 +21,15 @@ function RecipeCardPage() {
           {foodCard.time} minutes to make
         </h4>
         <ul className={styles["recipe-card-page-ingredients"]}>
+          {" "}
+          <strong>Ingredients</strong>
           {foodCard.ingredients.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
         <p className={styles["recipe-card-page-instructions"]}>
+          <strong> Instructions </strong> <br />
+          <br />
           {foodCard.instructions}
         </p>
       </div>

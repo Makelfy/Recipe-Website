@@ -87,3 +87,24 @@
   height: max-content;
   padding: 5px;
 }
+.sidebar-food-item-container {
+  list-style-position: inside;
+  list-style-type: square;
+}
+.sidebar-food-item-list {
+  cursor: pointer;
+  width: fit-content;
+  margin-bottom: 8px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.sidebar-food-item-list:hover {
+  background-color: #d9bdbd;
+  color: black;
+}
+.sidebar-food-item-list::marker {
+  content: "🍽 ";
+  color: gold;
+  padding-right: 8px;
+  font-size: 1.8em;
+}
