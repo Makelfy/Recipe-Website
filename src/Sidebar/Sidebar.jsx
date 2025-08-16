@@ -60,7 +60,12 @@ function Sidebar() {
 
         <div className={styles["sidebar-gap"]}></div>
 
-        <div className={styles["sidebar-add-recipe"]}>Add Recipe</div>
+        <div
+          className={styles["sidebar-add-recipe"]}
+          onClick={() => handleClickedMenu("addRecipe")}
+        >
+          Add Recipe
+        </div>
       </div>
 
       <div

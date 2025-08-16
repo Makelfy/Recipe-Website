@@ -96,6 +96,7 @@
   width: fit-content;
   margin-bottom: 8px;
   padding: 5px 10px;
+  padding-bottom: 15px;
   border-radius: 3px;
 }
 .sidebar-food-item-list:hover {

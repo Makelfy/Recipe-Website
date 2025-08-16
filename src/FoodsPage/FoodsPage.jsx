@@ -3,6 +3,7 @@ import styles from "./FoodsPage.module.css";
 import RecipeCard from "/src/RecipeCard/RecipeCard.jsx";
 import Recipes from "/src/Recipes.json";
 import { useFood } from "../MainTemplate";
+import AddRecipePage from "../AddRecipePage/AddRecipePage";
 
 function FoodsPage() {
   const { selectedFood } = useFood();
@@ -13,7 +14,7 @@ function FoodsPage() {
     filteredRecipes = Recipes;
   }
 
-  return (
+  return selectedFood !== "addRecipe" ? (
     <div className={styles["recipe-cards"]}>
       {filteredRecipes.map((item) => (
         <RecipeCard
@@ -26,6 +27,8 @@ function FoodsPage() {
         />
       ))}
     </div>
+  ) : (
+    <AddRecipePage />
   );
 }
 export default FoodsPage;
