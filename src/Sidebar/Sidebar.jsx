@@ -53,6 +53,7 @@ function Sidebar() {
             onClick={() => handleClickedMenu(item)}
             onMouseEnter={() => handleSelectedMenu(item)}
             onMouseLeave={() => handleSelectedMenu("")}
+            key={item}
           >
             {item}s
           </div>
@@ -77,7 +78,10 @@ function Sidebar() {
       >
         {foodTypes.map((foodType) =>
           selectedMenu === foodType ? (
-            <ul className={styles["sidebar-food-item-container"]}>
+            <ul
+              className={styles["sidebar-food-item-container"]}
+              key={foodType}
+            >
               {Recipes.filter((item) => item.type === foodType).map((item) => (
                 <li
                   className={styles["sidebar-food-item-list"]}
