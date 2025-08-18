@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./RecipeCard.module.css";
 import { useFoodCard } from "/src/MainTemplate.jsx";
 
 function RecipeCard(props) {
-  const { selectedFoodCard, setSelectedFoodCard } = useFoodCard("");
+  const { setSelectedFoodCard } = useFoodCard("");
+
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      console.log("cleaning vidoe");
+      if (videoRef.current) {
+        videoRef.current.pause();
+        videoRef.current.currentTime = 0;
+      }
+    };
+  }, []);
 
   function handleOpenRecipe(id) {
     setSelectedFoodCard(id);
@@ -16,9 +28,15 @@ function RecipeCard(props) {
         onClick={() => handleOpenRecipe(props.id)}
       >
         <h1 className={styles["recipe-card-title"]}>{props.title}</h1>
-        <video controls className={styles["recipe-card-video"]}>
-          <source src={props.source} type="video/mp4" />
-        </video>
+
+        <video
+          controls
+          className={styles["recipe-card-video"]}
+          ref={videoRef}
+          src={props.source}
+          type="video/mp4"
+        />
+
         <br />
         <p className={styles["recipe-card-text"]}>{props.minute} minutes</p>
         <br />

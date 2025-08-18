@@ -3,7 +3,7 @@ import { createContext, useState, useContext } from "react";
 const AppContext = createContext();
 
 export function AppProvider({ children }) {
-  const [selectedFood, setSelectedFood] = useState("");
+  const [selectedFood, setSelectedFood] = useState("home");
   const [selectedFoodCard, setSelectedFoodCard] = useState("");
 
   return (
