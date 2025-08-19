@@ -9,7 +9,6 @@ function RecipeCard(props) {
 
   useEffect(() => {
     return () => {
-      console.log("cleaning vidoe");
       if (videoRef.current) {
         videoRef.current.pause();
         videoRef.current.currentTime = 0;
@@ -35,6 +34,7 @@ function RecipeCard(props) {
           ref={videoRef}
           src={props.source}
           type="video/mp4"
+          onClick={(e) => e.stopPropagation()}
         />
 
         <br />

@@ -18,12 +18,35 @@
 
 .recipes-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 1rem;
+}
+
+.food-type-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer;
+  background-color: gray;
+  transition: background-color, color 0.3s ease;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  color: rgb(255, 255, 255);
+}
+.food-type-header-container:hover {
+  background-color: rgb(165, 164, 164);
+  color: black;
 }
 .food-type-header {
-  margin-left: 30px;
+  margin: 3px 0 3px 30px;
+  padding: 0;
+
   font-weight: 900;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2rem;
+}
+.food-type-header-arrow {
   font-size: 3rem;
-  color: gray;
+  margin-right: 10px;
 }

@@ -14,7 +14,7 @@
   background-color: #d9bdbd;
 
   display: grid;
-  grid-template-columns: 4fr 2fr repeat(3, 4fr) 3fr 4fr;
+  grid-template-columns: 4fr 2fr repeat(4, 4fr) 3fr 4fr;
   grid-column-gap: clamp(20px, 2vw, 50px);
 }
 

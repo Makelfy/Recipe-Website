@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import styles from "./FoodsPage.module.css";
 import RecipeCard from "/src/RecipeCard/RecipeCard.jsx";
 import Recipes from "/src/Recipes.json";
@@ -6,74 +5,59 @@ import { useFood } from "../MainTemplate";
 import AddRecipePage from "../AddRecipePage/AddRecipePage";
 
 function FoodsPage() {
-  const { selectedFood } = useFood();
-  const foodTypes = ["recipe", "meal", "dessert", "breakfast"];
+  const { selectedFood, setSelectedFood } = useFood();
+  const foodTypes = ["all type", "meal", "dessert", "breakfast"];
 
-  let filteredRecipes = Recipes.filter((item) => item.type === selectedFood);
-
-  if (selectedFood === "home") {
-    filteredRecipes = Recipes;
+  function getRecipesByType(type) {
+    if (type === "all type") return Recipes;
+    return Recipes.filter((item) => item.type === type);
   }
 
-  return selectedFood === "addRecipe" ? (
-    <AddRecipePage />
-  ) : selectedFood === "home" ? (
-    <div className={styles["home-page"]}>
-      {foodTypes.map((type) =>
-        type === "recipe" ? (
-          <>
-            <h1 key={"Recipes"} className={styles["food-type-header"]}>
-              {type}s
-            </h1>
-            <div key={"recipes-cards"} className={styles["recipes-container"]}>
-              {filteredRecipes.map((item) => (
-                <RecipeCard
-                  key={item.id}
-                  id={item.id}
-                  title={item.name}
-                  minute={item.time}
-                  type={item.type}
-                  source={item.source}
-                />
-              ))}
+  function renderRecipes(recipes) {
+    return recipes.map((item) => (
+      <RecipeCard
+        key={item.id}
+        id={item.id}
+        title={item.name}
+        minute={item.time}
+        type={item.type}
+        source={item.source}
+        className={styles["recipe-card"]}
+      />
+    ));
+  }
+
+  if (selectedFood === "addRecipe") {
+    return <AddRecipePage />;
+  }
+
+  if (selectedFood === "home") {
+    return (
+      <div className={styles["home-page"]}>
+        {foodTypes.map((type) => (
+          <div key={type}>
+            <div
+              className={styles["food-type-header-container"]}
+              onClick={() => setSelectedFood(type)}
+            >
+              <h1 className={styles["food-type-header"]}>{type}s</h1>
+              <div className={styles["food-type-header-arrow"]}>→</div>
             </div>
-          </>
-        ) : (
-          <>
-            <h1 key={type} className={styles["food-type-header"]}>
-              {type}s
-            </h1>
-            <div key={type} className={styles["recipes-container"]}>
-              {filteredRecipes
-                .filter((item) => item.type === type)
-                .map((item) => (
-                  <RecipeCard
-                    key={item.id}
-                    id={item.id}
-                    title={item.name}
-                    minute={item.time}
-                    type={item.type}
-                    source={item.source}
-                  />
-                ))}
+
+            <div className={styles["recipes-container"]}>
+              {renderRecipes(getRecipesByType(type))}
             </div>
-          </>
-        )
-      )}
-    </div>
-  ) : (
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  return (
     <div className={styles["food-pages"]}>
-      {filteredRecipes.map((item) => (
-        <RecipeCard
-          key={item.id}
-          id={item.id}
-          title={item.name}
-          minute={item.time}
-          type={item.type}
-          source={item.source}
-        />
-      ))}
+      {renderRecipes(getRecipesByType(selectedFood))}
     </div>
   );
 }
+
 export default FoodsPage;
