@@ -37,9 +37,8 @@ function RecipeCard(props) {
           onClick={(e) => e.stopPropagation()}
         />
 
-        <br />
         <p className={styles["recipe-card-text"]}>{props.minute} minutes</p>
-        <br />
+
         <p className={styles["recipe-card-text"]}>{props.type}</p>
       </div>
     </>

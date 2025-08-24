@@ -7,10 +7,44 @@ function RecipeCardPage() {
 
   const foodCard = Recipes.find((item) => item.id === selectedFoodCard);
 
+  const renderIngredients = () => {
+    if (!foodCard.ingredients) return null;
+
+    if (Array.isArray(foodCard.ingredients)) {
+      return foodCard.ingredients.map((item) => (
+        <li key={item} className={styles["ingredients-list"]}>
+          {item}
+        </li>
+      ));
+    }
+
+    // If ingredients is an object/dictionary
+    return Object.entries(foodCard.ingredients).map(([category, items]) => (
+      <div key={category}>
+        <h5 className={styles["ingredient-category"]}>{category}</h5>
+        <ul>
+          {Array.isArray(items) ? (
+            items.map((item) => (
+              <li key={item} className={styles["ingredients-list"]}>
+                {item}
+              </li>
+            ))
+          ) : (
+            <li className={styles["ingredients-list"]}>{items}</li>
+          )}
+        </ul>
+      </div>
+    ));
+  };
+
   return (
     <div className={styles["recipe-card-page"]}>
       <div>
-        <video controls className={styles["recipe-card-page-video"]}>
+        <video
+          key={foodCard.id}
+          controls
+          className={styles["recipe-card-page-video"]}
+        >
           <source src={foodCard.source} type="video/mp4" />
         </video>
       </div>
@@ -23,9 +57,7 @@ function RecipeCardPage() {
         <ul className={styles["recipe-card-page-ingredients"]}>
           {" "}
           <strong>Ingredients</strong>
-          {foodCard.ingredients.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
+          {renderIngredients()}
         </ul>
         <p className={styles["recipe-card-page-instructions"]}>
           <strong> Instructions </strong> <br />

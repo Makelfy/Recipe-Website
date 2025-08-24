@@ -2,43 +2,92 @@
   {
     "id": 1,
     "type": "meal",
-    "name": "Spaghetti Bolognese",
-    "ingredients": [
-      "spaghetti",
-      "minced beef",
-      "tomato sauce",
-      "onion",
-      "garlic"
-    ],
-    "time": 25,
-    "instructions": "Boil spaghetti, cook beef with onion and garlic, mix with sauce.",
-    "source": "/src/assets/THE BEST Bulking Meal Prep, Creamy Garlic Beef Pasta, OVER 1000 calories with 72g Protein 🔥💪🏽.mp4"
+    "name": "Pasta with Creamy Ground Beef",
+    "ingredients": {
+      "Seasoned Beef": [
+        "800g 15% beef mince",
+        "garlic powder",
+        "onion powder",
+        "smoked paprika",
+        "salt & pepper",
+        "tbsp oil"
+      ],
+
+      "Creamy Garlic Sauce": [
+        "1 medium chopped onion ",
+        "4 cloves garlic diced",
+        "400ml tomato sauce",
+        "200ml beef stock or pasta water",
+        "200ml double (heavy) cream",
+        "tsp italian herbs",
+        "Cheese based on preference"
+      ]
+    },
+    "time": 40,
+    "instructions": "First add oil to a large pan on medium-high heat. Once hot, add the beef mince and season with garlic powder, onion powder, smoked paprika, salt and pepper. Cook until browned and cooked through. Remove from the pan and set aside. In the same pan, add a little more oil if needed and add the chopped onion. Cook for 2-3 minutes until softened. Add the diced garlic and cook for another minute until fragrant. Pour in the tomato sauce and beef stock (or pasta water) and stir to combine. Bring to a simmer and let it cook for 5 minutes to allow the flavours to meld together. Reduce the heat to low and stir in the double cream and Italian herbs. Let it simmer for another 5 minutes until the sauce has thickened slightly. Add the cooked beef mince back into the pan and stir to combine everything together. Cook for another 2-3 minutes until heated through. Taste and adjust seasoning if needed. Serve over your favourite pasta or rice, garnished with fresh herbs or grated cheese if desired.",
+    "source": "/src/assets/PastaWithGroundBeef.mp4"
   },
   {
     "id": 2,
-    "type": "dessert",
-    "name": "Chocolate Cake",
-    "ingredients": ["flour", "sugar", "cocoa powder", "eggs", "butter"],
-    "time": 25,
-    "instructions": "Mix dry and wet ingredients separately, combine, bake at 180°C for 35 minutes.",
-    "source": "/src/assets/THE BEST Bulking Meal Prep, Creamy Garlic Beef Pasta, OVER 1000 calories with 72g Protein 🔥💪🏽.mp4"
+    "type": "meal",
+    "name": "Fırında Limonlu Tavuk Patates (4 Kişilik)",
+    "ingredients": [
+      "6 adet orta boy patates",
+      "8 adet derisiz tavuk kalça",
+      "1,5 limon",
+      "1 tutam tuz",
+      "1 tutam kekik",
+      "1 tutam toz kırmızı biber",
+      "1 tutam karabiber",
+      "1 tutam sarımsak tozu",
+      "1/2 çay bardağı zeytinyağı",
+      "1/2 su bardağı su",
+      "1 adet defne yaprağı",
+      "10 adet kiraz domates",
+      "1 avuç maydanoz"
+    ],
+    "time": 50,
+    "instructions": [
+      "1. İlk olarak patatesleri soyup elma dilim şeklinde dörde bölün. \n",
+      "2. Vestel Ankstre Fırını alt üst fanlı olarak 220 derecede ısınmaya bırakın. \n",
+      "3. Büyük bir kasede patatesleri, tavuklar, limon suyu, limonun kabukları,zeytinyağı tuz ve baharatlarla harmanlayın. \n",
+      "4. Fırın tepsisinin tabanına patatesleri üstlerine de tavukları dizin. Kasede kalan sostan limon kabuklarını çıkartın ve sosu suyla karıştırıp tepsiye dökün.",
+      "5. Defne yaprağını da tavukların altına yerleştirin.",
+      "6. Tepsiyi sıcak fırına yerleştirin ve tavukların üzeri kızarana kadar yaklaşık 15 dakika pişirin. Ardından fırının derecesini 150 dereceye düşürün.",
+      "7. Patatesler de yumuşayana kadar pişirme işlemine 15-20 dakika daha devam edin.",
+      "8. Son olarak fırını üst ızgara moduna getirip 180 dereceye ayarlayın ve tavukların üzerine dörde bölünmüş kiraz domatesler ekleyip 5 dakika daha pişirin.",
+      "9. Yemeği fırından çıkartın 10 dakika oda sıcaklığında dinlendirin ve üzerine maydanoz ekleyip servis edin. Afiyet olsun."
+    ],
+    "source": "src/assets/TavukPatates.mp4"
   },
   {
     "id": 3,
     "type": "dessert",
-    "name": "Chocolate Cake2",
-    "ingredients": ["flour", "sugar", "cocoa powder", "eggs", "butter"],
+    "name": "Trileçe",
+    "ingredients": {
+      "Kek için:": [
+        "6 yumurta",
+        "120 ml süt",
+        "200 g şeker",
+        "1 paket kabartma tozu",
+        "225 g un",
+        "Bir tutam tuz"
+      ],
+
+      "Şerbet için:": [
+        "700 ml süt",
+        "200 ml krema",
+        "200 ml süt reçeli (500 ml süt, 150 g toz şeker)"
+      ]
+    },
     "time": 25,
-    "instructions": "Mix dry and wet ingredients separately, combine, bake at 180°C for 35 minutes.",
-    "source": "/src/assets/THE BEST Bulking Meal Prep, Creamy Garlic Beef Pasta, OVER 1000 calories with 72g Protein 🔥💪🏽.mp4"
-  },
-  {
-    "id": 4,
-    "type": "dessert",
-    "name": "Chocolate Cake3",
-    "ingredients": ["flour", "sugar", "cocoa powder", "eggs", "butter"],
-    "time": 25,
-    "instructions": "Mix dry and wet ingredients separately, combine, bake at 180°C for 35 minutes.",
-    "source": "/src/assets/THE BEST Bulking Meal Prep, Creamy Garlic Beef Pasta, OVER 1000 calories with 72g Protein 🔥💪🏽.mp4"
+    "instructions": [
+      "Kek için 6 yumurtanın sarısını beyazından ayırın. 150 gram şekeri yavaş yavaş ekleyerek yumurta sarıları ile birlikte çırpın. Soluk sarı bir kıvam aldıktan sonra sütü ekleyip karıştırın. Yumurta beyazlarını da şekerin kalanı ile birlikte aynı şekilde, videodaki kıvama gelene kadar çırpın ve iki karışımı birleştirin. Ayrı çırpmamızın sebebi, yumurta beyazının olabildiğince fazla hacim kazanması. Birlikte çırpıldığında sarının içindeki yağlar bunu engelliyor, dolayısıyla şerbeti çekecek sünger gibi dokuyu elde etmek zorlaşıyor. Homojen karıştıktan sonra kuru malzemeleri ekleyin ve nazikçe katlayarak karıştırın. Yağladığınız fırın tepsisine yayıp, 180 derece fırında kabarıp kızarana kadar (ortalama 20 dk) pişirin. Fırından çıkartınca, oda sıcaklığına gelene kadar şerbeti eklemeyin.",
+
+      "Şerbet için süt reçelini kendiniz yapmak isterseniz, 500 ml süte 150 g toz şeker ekleyin ve orta ateşte sürekli karıştırarak videodaki kıvama gelene kadar çektirin. Daha sonra üzerine 700 ml süt ve 200 ml krema ekleyip karıştırın. Eğer süt reçeli kullanmak istemezseniz, 900 ml süt, 200 ml krema, 200 g şekeri karıştırıp, şeker tamamen çözünene kadar ısıtıp oda sıcaklığına getirdikten sonra keke dökebilirsiniz. Şerbeti dökerken 3 kademe şeklinde dökün; hepsini bir anda dökmeyin. Üzerindeki kremşanti için bir paket soğuk kremayı, önceden soğuttuğum karıştırma kabında 3 yemek kaşığı pudra şekeri ile birlikte kabarana kadar çırptım.",
+
+      "Sos yerine dilediğiniz meyveyi dondurup üzerine rendeleyebilirsiniz. Benim favorim çilek ve ahududu."
+    ],
+    "source": "/src/assets/Trileçe.mp4"
   }
 ]
